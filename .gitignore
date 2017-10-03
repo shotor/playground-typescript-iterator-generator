@@ -1,0 +1,13 @@
+# Node
+logs
+*.log
+npm-debug.log*
+node_modules/
+.npm
+
+# Transpiled files
+dist/
+
+# VS Code
+#.vscode/*
+#!.vscode/tasks.json

@@ -1,0 +1,52 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Program",
+      "program": "${workspaceRoot}/dist/index.js",
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}/dist",
+      "outFiles": [
+        "${workspaceRoot}/dist/**/*.js"
+      ],
+      "preLaunchTask": "build"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Tests",
+      //"preLaunchTask": "build",
+      "osx": {
+        //"program": "${workspaceRoot}/node_modules/jest/bin/jest"
+        //"program": "${workspaceRoot}/node_modules/.bin/jest"
+        "program": "${workspaceRoot}/node_modules/jest/bin/jest.js"
+      },
+      "args": [
+        "-i"
+      ],
+      "console": "integratedTerminal",
+      "protocol": "inspector",
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceRoot}/dist/**/*"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Tests",
+      "console": "integratedTerminal",
+
+      "internalConsoleOptions": "openOnSessionStart",
+      "preLaunchTask": "build",
+      "osx": {
+        //"program": "${workspaceRoot}/node_modules/jest/bin/jest"
+        "program": "${workspaceRoot}/node_modules/.bin/jest"
+      }
+    }
+  ]
+}
